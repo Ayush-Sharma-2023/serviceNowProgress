@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ServiceNow Learning To-Do</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-800 p-6 min-h-screen">
+
+  <div class="max-w-4xl mx-auto">
+    <!-- Title -->
+    <h1 class="text-4xl font-bold mb-6 text-blue-700 flex items-center">
+      📝 ServiceNow Learning To-Do List
+    </h1>
+
+    <!-- Remaining Time Card -->
+    <div class="mb-6 p-4 bg-white rounded-xl shadow-lg border border-blue-200">
+      <p class="text-lg font-semibold">
+        ⏳ Remaining Time: <span id="remaining-time" class="text-blue-600 font-bold">--</span>
+      </p>
+      <p class="text-sm text-gray-500">Updates automatically as you complete tasks.</p>
+      <div class="w-full bg-gray-200 rounded-full h-3 mt-3">
+        <div id="progress-bar" class="bg-blue-500 h-3 rounded-full transition-all duration-300 ease-in-out"></div>
+      </div>
+      <p id="progress-percent" class="text-sm text-gray-600 mt-1">0% Completed</p>
+    </div>
+
+    <!-- Task List -->
+    <div id="task-list" class="space-y-6">
+      
+      <!-- Welcome Section -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Welcome</h2>
+        <div data-duration="3h" class="task flex items-center bg-white p-3 rounded-lg shadow hover:shadow-md transition">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Welcome to ServiceNow — 3h</label>
+        </div>
+        <p class="italic text-sm text-gray-500">// Welcome to ServiceNow Micro Certification</p>
+        <div class="italic text-gray-400 pl-6">Not Auto-assigned</div>
+      </section>
+
+      <!-- App Engine & Flow Designer Section -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">App Engine & Flow Designer</h2>
+        <div data-duration="3h 38m" class="task optional flex items-center bg-white p-3 rounded-lg shadow hover:shadow-md">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Introduction to App Engine Studio for Developers — 3h 38m (Optional)</label>
+        </div>
+        <div data-duration="15m" class="task flex items-center bg-white p-3 rounded-lg shadow hover:shadow-md">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>ServiceNow Studio Overview — 15m</label>
+        </div>
+        <div data-duration="1h" class="task important flex items-center bg-white p-3 rounded-lg shadow border-l-4 border-orange-400 hover:shadow-md">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-orange-500">
+          <label>Flow Designer: Introduction — 1h (IMPORTANT)</label>
+        </div>
+        <div data-duration="2h" class="task important flex items-center bg-white p-3 rounded-lg shadow border-l-4 border-orange-400 hover:shadow-md">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-orange-500">
+          <label>Flow Designer: Create a Flow — 2h (IMPORTANT)</label>
+        </div>
+        <div data-duration="5h" class="task important flex items-center bg-white p-3 rounded-lg shadow border-l-4 border-orange-400 hover:shadow-md">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-orange-500">
+          <label>Flow Designer: Create Subflows and Actions (Vancouver) — 5h (IMPORTANT)</label>
+        </div>
+        <p class="italic text-sm text-gray-500">// Flow Designer Micro-Certification</p>
+        <div class="italic text-gray-400 pl-6">Not Auto-assigned</div>
+      </section>
+
+      <!-- Admin & Reporting -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Admin & Reporting</h2>
+        <div data-duration="12h" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>ServiceNow Administration Fundamentals On Demand (Xanadu) — 12h</label>
+        </div>
+        <div data-duration="20m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Introduction to Generative AI — 20m</label>
+        </div>
+        <div data-duration="30m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Introduction to ServiceNow: Portfolios and Processes — 30m</label>
+        </div>
+        <div data-duration="3h" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Get Started with Reports — 3h</label>
+        </div>
+      </section>
+
+      <!-- CSA Prep -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">CSA Preparation</h2>
+        <p class="italic text-sm text-gray-500">// STUDY FOR CSA EXAM</p>
+        <div data-duration="1h" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Academic Partnerships CSA Certification Preparation — 1h</label>
+        </div>
+        <p class="italic text-sm text-gray-500">// Give Exam</p>
+        <div data-duration="7h 32m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Scripting in ServiceNow Fundamentals On Demand — 7h 32m</label>
+        </div>
+        <div data-duration="15h 1m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Application Development Fundamentals On Demand — 15h 1m</label>
+        </div>
+        <div data-duration="25m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Introduction to Scripting in ServiceNow — 25m</label>
+        </div>
+        <div data-duration="6h 30m" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>UI Builder Fundamentals (Xanadu) — 6h 30m</label>
+        </div>
+        <p class="italic text-sm text-gray-500">// UI Builder Fundamentals Micro Certification</p>
+        <div class="italic text-gray-400 pl-6">Not Auto-assigned</div>
+      </section>
+
+      <!-- CAD Prep -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">CAD Preparation</h2>
+        <div data-duration="1h" class="task flex items-center bg-white p-3 rounded-lg shadow">
+          <input type="checkbox" class="task-checkbox mr-3 w-5 h-5 accent-blue-500">
+          <label>Academic Partnerships CAD Certification Preparation — 1h</label>
+        </div>
+        <p class="italic text-sm text-gray-500">// GIVE CAD EXAM</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    // Parse "xh ym" string to total minutes
+    function parseDuration(str) {
+      const match = str.match(/(?:(\d+)h)?\s*(?:(\d+)m)?/);
+      const hours = parseInt(match?.[1]) || 0;
+      const minutes = parseInt(match?.[2]) || 0;
+      return hours * 60 + minutes;
+    }
+
+    // Format total minutes back to "xh ym"
+    function formatMinutes(totalMinutes) {
+      const h = Math.floor(totalMinutes / 60);
+      const m = totalMinutes % 60;
+      return `${h}h ${m}m`;
+    }
+
+    // Update progress bar and remaining time
+    function updateRemainingTime() {
+      const tasks = document.querySelectorAll('.task[data-duration]');
+      let total = 0, completed = 0;
+
+      tasks.forEach(task => {
+        const duration = parseDuration(task.dataset.duration);
+        total += duration;
+
+        const checkbox = task.querySelector('input[type="checkbox"]');
+        if (checkbox.checked) {
+          completed += duration;
+        }
+      });
+
+      const remaining = total - completed;
+      document.getElementById('remaining-time').textContent = formatMinutes(remaining);
+
+      // Progress bar update
+      const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+      document.getElementById('progress-bar').style.width = `${percent}%`;
+      document.getElementById('progress-percent').textContent = `${percent}% Completed`;
+    }
+
+    // Save checked states to localStorage
+    function saveProgress() {
+      const checkboxes = document.querySelectorAll('.task-checkbox');
+      const states = Array.from(checkboxes).map(cb => cb.checked);
+      localStorage.setItem('taskProgress', JSON.stringify(states));
+    }
+
+    // Load checked states from localStorage
+    function loadProgress() {
+      const states = JSON.parse(localStorage.getItem('taskProgress') || "[]");
+      const checkboxes = document.querySelectorAll('.task-checkbox');
+      checkboxes.forEach((cb, idx) => {
+        if (states[idx]) cb.checked = true;
+      });
+    }
+
+    // Init
+    loadProgress();
+    updateRemainingTime();
+
+    // Event listeners
+    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        saveProgress();
+        updateRemainingTime();
+      });
+    });
+  </script>
+</body>
+</html>
